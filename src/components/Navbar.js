@@ -1,17 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-function Navbar() {
-  return (
-    <nav className="navbar">
-      <ul className="nav-links">
-        <Link to="/"><li>Home</li></Link>
-        <Link to="/about"><li>About</li></Link>
-        <Link to="/profile"><li>Profile</li></Link>
-        <Link to="/shop"><li>Shop</li></Link>
-      </ul>
-    </nav>
-  )
+import MenuItems from './MenuItems';
+import { FaReact } from 'react-icons/fa';
+import { IconContext as IC } from 'react-icons';
+
+class Navbar extends Component {
+  state = {
+    clicked: false,
+  }
+
+  handleCLick = () => {
+    
+  }
+
+  render() {
+    return (
+      <Nav className="NavbarItems">
+        <NavLogo>React 
+        <IC.Provider value={{style: {marginLeft: '0.5rem', fontsize:'1.6rem', justifySelf:'center'}}} >
+          <FaReact onClick={this.handleCLick}/>
+        </IC.Provider></NavLogo>
+        <ul>
+          {MenuItems.map((item, index) => {
+            return (
+              <li key={index}>
+                <a className={item.cName} href={item.url}>
+                  {item.title}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </Nav>
+    )
+  }
 }
+
+const Nav = styled.nav`
+  background: linear-gradient(90deg, rgb(110, 94, 254) 0%, rgba(72,63,525,1) 100%);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  `;
+
+const NavLogo = styled.h1`
+  color: #fff; 
+  justify-items: start;
+  margin-left: 20px; 
+  cursor: pointer;
+`;
+
 
 export default Navbar;
