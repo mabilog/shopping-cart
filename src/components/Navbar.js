@@ -18,7 +18,7 @@ class Navbar extends Component {
     return (
       <Nav className="NavbarItems">
         <NavLogo>React 
-        <IC.Provider value={{style: {marginLeft: '0.5rem', fontsize:'1.6rem', justifySelf:'center'}}} >
+        <IC.Provider value={{style: {marginLeft: '0.5rem', fontsize:'1.6rem', justifySelf:'center', animation: 'spin-animation 0.5s infinite'}}} >
           <FaReact onClick={this.handleCLick}/>
         </IC.Provider></NavLogo>
         <ul>
