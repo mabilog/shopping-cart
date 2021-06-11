@@ -17,7 +17,6 @@ function App() {
           <Route path='/reports/2021' exact component={ReportsOne}/>
           <Route path='/reports/2020' exact component={ReportsTwo}/>
           <Route path='/reports/2019' exact component={ReportsThree}/>
-
         </Switch>
       </AppWrapper>
   );
