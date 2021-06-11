@@ -9,3 +9,14 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.home,
+.reports,
+.shop,
+.messages,
+.support {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}

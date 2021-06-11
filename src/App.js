@@ -1,35 +1,30 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import About from './components/About';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import Shop from './components/Shop';
-
+import Sidebar from './components/Sidebar';
+import Overview from './pages/Overview';
+import {ReportsOne, ReportsTwo, ReportsThree} from './pages/Reports'
 import './App.css';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
+      <AppWrapper> 
+        <Sidebar />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/shop" component={Shop} />
-          <Route exact path="/profile" component={Profile} />
+          <Route path='/overview' exact component={Overview}/>
+          <Route path='/reports/2021' exact component={ReportsOne}/>
+          <Route path='/reports/2020' exact component={ReportsTwo}/>
+          <Route path='/reports/2019' exact component={ReportsThree}/>
+
         </Switch>
-      </div>
-    </Router>
+      </AppWrapper>
   );
 }
 
-const Home = () => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  )
-}
+const AppWrapper = styled(Router)`
+
+`;
 
 export default App;
