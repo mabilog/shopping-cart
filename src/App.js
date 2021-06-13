@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Sidebar from './components/Sidebar';
 import Overview from './pages/Overview';
-import {ReportsOne, ReportsTwo, ReportsThree} from './pages/Reports'
+import {ReportsOne, ReportsTwo, ReportsThree} from './pages/Reports';
+
 import './App.css';
 
 function App() {

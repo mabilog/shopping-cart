@@ -1,44 +1,42 @@
-import React, { Component } from 'react';
-import MenuItems from './MenuItems';
-import './Navbar.css';
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom';
 
-class Navbar extends Component{
-    state = {
-      clicked: false,
-    }
+import styled from 'styled-components';
 
-    handleClick = () => {this.setState({clicked: !this.state.clicked})}
-  
-    render(){
-    return (
-      <nav className="NavbarItems">
-        <h1 className="Navbar-Logo">React<i className="fab fa-react"></i></h1>
-        <div className="menu-icon">
-        
-        </div>
-        {this.state.clicked ? (
+import NavbarData from './NavbarData';
+const Navbar = () => {
 
-          <>
-          <i className="fas fa-times"></i>
-            <ul>
-            {MenuItems.map((item, index) => {
-                return (
-                  <li key={index}>
-                    <a className={item.cName} href={item.url}>{item.title}</a>
-                   </li>
-                )
-              })}
-            </ul>
-        </>
-        ):( 
-          <i className="fas fa-bars"></i>
-        )} 
-      </nav>
-    )
-  }
-  }
+  const [clicked, setClicked] = useState(false);
 
+  return (
+    // <Nav>
+    //   {NavbarData.map((item, index) => {
+    //     return(
+    //       <NavLink>
+    //         <div  to={item.path} onClick={setClicked(!clicked)} key={index}>
+    //           {item.title} {item.icon}
+    //         </div>
+    //       </NavLink>
+    //     )
+    //   })}
+    // </Nav>
+    <>
+    {NavbarData.map((item, index) => {
+      <NavLink key={index} style={{color:'white'}}> 
+        {item.title}
+      </NavLink>
+    })}
+    </>
+  )
+}
 
+const Nav = styled.ul``;
+
+const NavLink = styled(Link)`
+ display: flex;
+ flex-direction: flex-end;
+ color: white; 
+`;
 
 
 export default Navbar;

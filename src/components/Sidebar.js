@@ -7,6 +7,8 @@ import { FaBars, FaTimes, FaReact } from 'react-icons/fa';
 import SidebarData from './SidebarData';
 import Submenu from './Submenu';
 
+import Navbar from './Navbar';
+
 
 const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -20,6 +22,7 @@ const Sidebar = () => {
         <FaBars onClick={showSidebar}/> 
       </NavIcon>
         <Title> React <FaReact/></Title>
+        <Navbar />
     </Nav>
       <SidebarNav sidebar={sidebar}>
         <SidebarWrapper >
