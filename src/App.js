@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 
 import './App.css';
 
 function App() {
   return (
       <AppWrapper> 
-        <Navbar />
+        <Header />
         <Switch>
           <Route path='/' exact component={Home}/>
           {/* <Route path='/overview' exact component={Overview}/> 
