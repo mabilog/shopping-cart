@@ -3,21 +3,21 @@ import styled from 'styled-components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Sidebar from './components/Sidebar';
-import Overview from './pages/Overview';
-import {ReportsOne, ReportsTwo, ReportsThree} from './pages/Reports';
+import Home from './pages/Home';
+import Navbar from './components/Navbar';
 
 import './App.css';
 
 function App() {
   return (
       <AppWrapper> 
-        <Sidebar />
+        <Navbar />
         <Switch>
-          <Route path='/overview' exact component={Overview}/>
+          <Route path='/' exact component={Home}/>
+          {/* <Route path='/overview' exact component={Overview}/> 
           <Route path='/reports/2021' exact component={ReportsOne}/>
           <Route path='/reports/2020' exact component={ReportsTwo}/>
-          <Route path='/reports/2019' exact component={ReportsThree}/>
+          <Route path='/reports/2019' exact component={ReportsThree}/> */}
         </Switch>
       </AppWrapper>
   );
