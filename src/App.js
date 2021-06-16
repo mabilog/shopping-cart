@@ -24,7 +24,9 @@ function App() {
 }
 
 const AppWrapper = styled(Router)`
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default App;

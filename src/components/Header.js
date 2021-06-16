@@ -7,31 +7,69 @@ import { BiSearch, BiCart } from 'react-icons/bi';
 const Header = () => {
   return (
     <HeaderWrapper className="header-container">
-      <Link to="/" className="home-btn">Shopping Co</Link>
+      <HomeBtn to="/" className="home-btn">Shopping Co</HomeBtn>
       <NavWrapper className='nav-container'>
-        <Link className='shop-btn' to='shop'>Shop</Link>
+        <ShopBtn className='shop-btn' to='shop'>Shop</ShopBtn>
         <ButtonWrapper>
-        <SearchBtn /*onClick={openSearch} */ className='search-btn'>
+        <Button /*onClick={openSearch} */ className='search-btn'>
           <BiSearch />
-        </SearchBtn>
-        <CartBtn /* onClick={openCart} */ className='cart-btn'>
-        <BiCart/>
-        </CartBtn>
+        </Button>
+        <Button /* onClick={openCart} */ className='cart-btn'>
+          <BiCart/> 
+          {/* {cartLength} */}
+          0
+        </Button>
         </ButtonWrapper>
       </NavWrapper>
     </HeaderWrapper>
   )
 }
 
-const ButtonWrapper = styled.div``;
+const HeaderWrapper = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  width: 90%;
+  top: 15px;
+  left: 10px;
+  position: sticky;
+`;
 
-const CartBtn = styled.button``;
+const HomeBtn = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+`;
 
-const HeaderWrapper = styled.header``;
+const NavWrapper = styled.nav`
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 
-const NavWrapper = styled.nav``;
+const ButtonWrapper = styled.div`
+  
+`;
 
-const SearchBtn = styled.button``;
+const ShopBtn = styled(Link)`
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+`;
+
+const Button = styled.button`
+  margin: 10px;
+  background: none;  
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  
+`;
+
+// const SearchBtn = styled.button``;
 
 export default Header; 
 
