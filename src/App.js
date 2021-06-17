@@ -4,20 +4,21 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
+import Shop from './components/Shop';
+import ShopItems from './components/ShopItems'
+import Items from './components/Items';
+
 
 import './App.css';
 
 function App() {
   return (
       <AppWrapper> 
-        <Header />
+        <Navbar />
         <Switch>
           <Route path='/' exact component={Home}/>
-          {/* <Route path='/overview' exact component={Overview}/> 
-          <Route path='/reports/2021' exact component={ReportsOne}/>
-          <Route path='/reports/2020' exact component={ReportsTwo}/>
-          <Route path='/reports/2019' exact component={ReportsThree}/> */}
+          <Route path='/shop' exact><Shop items={Items}/> </Route>
         </Switch>
       </AppWrapper>
   );
