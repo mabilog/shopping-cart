@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Shop from './components/Shop';
-import ShopItems from './components/ShopItems'
 import Items from './components/Items';
 
 
