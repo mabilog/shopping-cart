@@ -29,9 +29,9 @@ const NavWrapper = styled.nav`
   left: 0;
   right: 0;
   font-size: 1.3rem;
-  background-color: transparent;
+  background-color: #eee;
   transition: background-color 0.5s ease-in;
-  color: white;
+  color: black;
 `;
 
 
