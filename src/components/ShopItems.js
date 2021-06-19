@@ -14,7 +14,7 @@ const ShopItems = ({ food }) => {
           {console.log(food.img)}
           <Text>
             {food.name}
-            <Price>${food.price} CAD</Price>
+            <p>${food.price} CAD</p>
           </Text>
       </FoodLink>
     </ItemWrapper>
@@ -30,8 +30,11 @@ const ItemWrapper = styled.div`
 `;
 
 const FoodLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  color: black;
   &:hover {
     text-decoration: underline;
   }
@@ -42,12 +45,14 @@ const Text = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
+  font-size: 2rem;
+  width: auto;
 `;
-
-const Price = styled.p``;
 
 const Image = styled.img`
   height: 300px;
+  max-width: 300px;
 `;
 
 export default ShopItems
