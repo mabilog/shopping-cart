@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }from 'react';
 import styled from 'styled-components';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -13,10 +13,29 @@ import Item from './components/Item.js';
 import './App.css';
 
 function App() {
-  const findItem = id => {
-    Food.find(item => item.id === id)
-  console.log('Food.params')}
-  // const findItem = id => console.log(id)
+  const [cartItems, setCartItems] = useState([]);
+
+  const addCartItem = (newItem) => {
+    const alreadyInCart = cartItems
+      .map(item => item.id)
+      .includes(newItem.id)
+    if(alreadyInCart){
+      changeQty(newItem.id, 1);
+    }else {
+      setCartItems([...cartItems, newItem])
+    }
+  };
+
+  const findItem = (id) => {
+     Food.find(item => item.id === id)
+  }
+  const changeQty = (id, delta) => {
+    setCartItems(
+      cartItems.map(
+        item => item.id === id ? { ...item, qty: item.qyt + delta} : item
+      ))
+  }
+  const cartItemsQty = cartItems.reduce((acc, cur)=> acc + cur.qty, 0);
 
   return (
     <AppWrapper> 
@@ -25,19 +44,9 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/shop' exact><Shop foods={Food}/> </Route>
-          {/* <Route path='shop/:id' render={routeProps => {
-            <Item
-              // item={findItem(routeProps.match.params.id)} />
-              item={findItem(routeProps)} />
-
-              }}>
-
-          </Route> */}
-          <Route path="/shop/:id" render={routeProps => {
+          <Route exact path="/shop/:id"  render={(routeProps) => {
             <Item item={findItem(routeProps.match.params.id)} />
-            console.log('params')
-          }}>
-          </Route>
+          }} >hello</Route>
         </Switch>
       </AppWrapper>
   );
