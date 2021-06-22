@@ -8,10 +8,9 @@ const ShopItems = ({ food }) => {
     <ItemWrapper>
       <FoodLink to={`/shop/${food.id}`}>
         <Image 
-          src={food.img}
+          src={`https://source.unsplash.com/${food.img}/640x640`}
           alt={food.id} 
           />
-          {console.log(food.img)}
           <Text>
             {food.name}
             <p>${food.price} CAD</p>
