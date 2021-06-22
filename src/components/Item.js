@@ -1,19 +1,20 @@
-import React, {useState, useEffect} from 'react'
-import { Link, useHistory } from 'react-router-dom';
-import { BsChevronLeft } from 'react-icons/bs';
-import styled from 'styled-components';
+// import React, {useState, useEffect} from 'react'
+// import { Link, useHistory } from 'react-router-dom';
+// import { BsChevronLeft } from 'react-icons/bs';\
+import React from 'react';
+// import styled from 'styled-components';
 
 
 // const Item = ({item, addCartItem}) => {
 const Item = ({item}) => {
 
-  const [showCompleteOrder, setShowCompleteOrder] = useState(false);
-  const { goBack } = useHistory();
+  // const [showCompleteOrder, setShowCompleteOrder] = useState(false);
+  // const { goBack } = useHistory();
 
-  const handleAdd = () => {
-    setShowCompleteOrder(true);
-    // addCartItem(item);
-  }
+  // const handleAdd = () => {
+  //   setShowCompleteOrder(true);
+  //   // addCartItem(item);
+  // }
   
   return (<div>Item</div>)
   // return (
@@ -39,18 +40,18 @@ const Item = ({item}) => {
   // )
 }
 
-const ItemWrapper = styled.div`
-  display: flex;
-  min-height: calc(100vh - 6rem);
-`;
+// const ItemWrapper = styled.div`
+//   display: flex;
+//   min-height: calc(100vh - 6rem);
+// `;
 
-const InfoWrapper = styled.div``;
+// const InfoWrapper = styled.div``;
 
-const BackBtn = styled.button``;
+// const BackBtn = styled.button``;
 
-const OrderBtn = styled.button``;
+// const OrderBtn = styled.button``;
 
-const AddBtn = styled.button``;
+// const AddBtn = styled.button``;
 
 
 export default Item
