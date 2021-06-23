@@ -4,8 +4,9 @@ import { BsChevronLeft } from 'react-icons/bs';
 import styled from 'styled-components';
 
 
-const Item = ({item, addCartItem}) => {
+const Item = ({item}) => {
 
+  // console.log(item);
   const [showCompleteOrder, setShowCompleteOrder] = useState(false);
   const { goBack } = useHistory();
 
@@ -13,7 +14,7 @@ const Item = ({item, addCartItem}) => {
     setShowCompleteOrder(true);
     // addCartItem(item);
   }
-  return(<div>{item.id}</div>)
+  return(<div>{item}</div>)
   // return (
   //   <ItemWrapper>
   //     <img

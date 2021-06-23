@@ -26,28 +26,31 @@ function App() {
     }
   };
 
-  const findItem = (id) => {
-     Food.find(item => item.id === id)
-  }
+  const findItem = (id) => Food.find(item => item.id === id)
+
   const changeQty = (id, delta) => {
     setCartItems(
       cartItems.map(
         item => item.id === id ? { ...item, qty: item.qyt + delta} : item
       ))
   }
+
   const cartItemsQty = cartItems.reduce((acc, cur)=> acc + cur.qty, 0);
 
   return (
-    <AppWrapper> 
-        {/* {console.log(Food)} */}
-        <Navbar />
-        <Switch>
-          <Route path='/' exact component={Home}/>
-          <Route path='/shop' exact><Shop foods={Food}/> </Route>
-          <Route exact path="/shop/:id"  render={(routeProps) => {
-            <Item item={findItem(routeProps.match.params.id)} />
-          }} >hello</Route>
-        </Switch>
+    <AppWrapper basename="/"> 
+          <Navbar />
+          <Switch>
+            <Route path='/' exact component={Home}/>
+            <Route path='/shop' exact><Shop foods={Food}/> </Route>
+            <Route 
+              exact
+              path="/shop/:id"
+              render={(routeProps) => (
+                <Item item={findItem(routeProps.match.params.id)} />
+                )}
+            />
+          </Switch>
       </AppWrapper>
   );
 }
