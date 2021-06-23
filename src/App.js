@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import Shop from './pages/Shop';
 // import Items from './components/Items';
 import Food from './components/Food'
-import Item from './components/Item.js';
+import Item from './components/Item'
 
 import './App.css';
 

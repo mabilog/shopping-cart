@@ -13,28 +13,28 @@ const Item = ({item, addCartItem}) => {
     setShowCompleteOrder(true);
     // addCartItem(item);
   }
-
-  return (
-    <ItemWrapper>
-      <img
-      src={`https://source.unsplash.com/${item.img}/640x640`}
-      alt={item.id}
-      />
-      <InfoWrapper>
-        <h1>{item.name}</h1>
-        <p>{item.price.toFixed(2)} USD</p>
-        <AddBtn onClick={handleAdd}>Add to cart</AddBtn>
-        {showCompleteOrder && (
-          <Link to='/cart'>
-            <OrderBtn>Complete Order</OrderBtn>
-          </Link>
-        )}
-        <BackBtn onClick={goBack}>
-          <BsChevronLeft/> Go Back
-        </BackBtn>
-      </InfoWrapper>
-    </ItemWrapper>
-  )
+  return(<div>{item.id}</div>)
+  // return (
+  //   <ItemWrapper>
+  //     <img
+  //     src={`https://source.unsplash.com/${item.img}/640x640`}
+  //     alt={item.id}
+  //     />
+  //     <InfoWrapper>
+  //       <h1>{item.name}</h1>
+  //       <p>{item.price.toFixed(2)} USD</p>
+  //       <AddBtn onClick={handleAdd}>Add to cart</AddBtn>
+  //       {showCompleteOrder && (
+  //         <Link to='/cart'>
+  //           <OrderBtn>Complete Order</OrderBtn>
+  //         </Link>
+  //       )}
+  //       <BackBtn onClick={goBack}>
+  //         <BsChevronLeft/> Go Back
+  //       </BackBtn>
+  //     </InfoWrapper>
+  //   </ItemWrapper>
+  // )
 }
 
 const ItemWrapper = styled.div`
