@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 const Item = ({item}) => {
 
-  // console.log(item);
+  console.log(item);
   const [showCompleteOrder, setShowCompleteOrder] = useState(false);
   const { goBack } = useHistory();
 

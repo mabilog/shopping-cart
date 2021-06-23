@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
 const ShopItems = ({ food }) => {
-  
+  console.log(food)
   return (
     <ItemWrapper>
       <FoodLink to={`/shop/${food.id}`}>

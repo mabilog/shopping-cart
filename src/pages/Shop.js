@@ -5,7 +5,7 @@ import ShopItems from '../components/ShopItems'
 const Shop = ({foods}) => {
   return (
     <ShopWrapper>
-      {foods.map((food) => <ShopItems key={food.id} {...food}/>)}
+      {foods.map((food) => <ShopItems key={food.id} food={food}/>)}
       {console.log("Shop component")}
     </ShopWrapper>
   )
