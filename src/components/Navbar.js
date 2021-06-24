@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 import {  BiCart } from 'react-icons/bi';
 
-const Navbar = () => {
+const Navbar = ({cartItemsQty}) => {
   return (
     <NavWrapper>
       <Home to='/'>Shopping Co</Home>
       <Shop to='/shop'>Shop</Shop>
       <Cart to='/cart'>
         <BiCart/> 
-        <span>0</span> 
+        <span>{cartItemsQty}</span> 
       </Cart>
 
     </NavWrapper>

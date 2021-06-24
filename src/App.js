@@ -9,6 +9,7 @@ import Shop from './pages/Shop';
 // import Items from './components/Items';
 import Food from './components/Food'
 import Item from './components/Item'
+import Cart from './pages/Cart';
 
 import './App.css';
 
@@ -35,11 +36,15 @@ function App() {
       ))
   }
 
+  const deleteCartItem = (id) => {
+    setCartItems(cartItems.filter((item) => item.id === id)
+    );
+  }
   const cartItemsQty = cartItems.reduce((acc, cur)=> acc + cur.qty, 0);
 
   return (
     <AppWrapper basename="/"> 
-          <Navbar />
+          <Navbar  cartItemsQty={cartItemsQty}/>
           <Switch>
             <Route path='/' exact component={Home}/>
             <Route path='/shop' exact><Shop foods={Food}/> </Route>
@@ -47,9 +52,20 @@ function App() {
               exact
               path="/shop/:id"
               render={(routeProps) => (
-                <Item item={findItem(routeProps.match.params.id)} />
+                <Item 
+                  item={findItem(routeProps.match.params.id)} 
+                  addCartItem={addCartItem}/>
                 )}
             />
+            <Route 
+              path='/cart'>
+              
+              <Cart 
+                items={cartItems}
+                changeQty={changeQty}
+                deleteCartItem={deleteCartItem} 
+              />
+              </Route>
           </Switch>
       </AppWrapper>
   );
