@@ -40,7 +40,8 @@ function App() {
     setCartItems(cartItems.filter((item) => item.id === id)
     );
   }
-  const cartItemsQty = cartItems.reduce((acc, cur)=> acc + cur.qty, 0);
+
+  const cartItemsQty = cartItems.reduce((acc, cur) => acc + cur.qty, 0);
 
   return (
     <AppWrapper basename="/"> 
