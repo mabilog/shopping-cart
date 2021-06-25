@@ -7,21 +7,21 @@ const Food = [
     name: 'Cheeseburger',
     price: 10,
     img: 'E94j3rMcxlw',
-    quantity: 10,
+    qty: 1,
   },
   {
     id: 'fries',
     name: 'Fries',
     price: 5,
     img: '5I5aqYJrdso',
-    quantity: 10,
+    qty: 1,
   },
   {
     id: 'milkshake',
     name: 'Milkshake',
     price: 8,
     img: 'uy9DJw9e_vs',
-    quantity: 10,
+    qty: 1,
   },
 ]
 

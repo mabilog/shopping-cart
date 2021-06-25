@@ -18,7 +18,7 @@ function App() {
 
   const addCartItem = (newItem) => {
     const alreadyInCart = cartItems
-      .map(item => item.id)
+      .map(i => i.id)
       .includes(newItem.id)
     if(alreadyInCart){
       changeQty(newItem.id, 1);
@@ -32,19 +32,19 @@ function App() {
   const changeQty = (id, delta) => {
     setCartItems(
       cartItems.map(
-        item => item.id === id ? { ...item, qty: item.qyt + delta} : item
+        (item) => (item.id === id ? { ...item, qty: item.qty + delta} : item)
       ))
   }
 
   const deleteCartItem = (id) => {
-    setCartItems(cartItems.filter((item) => item.id === id)
+    setCartItems(cartItems.filter((item) => item.id !== id)
     );
   }
 
   const cartItemsQty = cartItems.reduce((acc, cur) => acc + cur.qty, 0);
 
   return (
-    <AppWrapper basename="/"> 
+    <AppWrapper > 
           <Navbar  cartItemsQty={cartItemsQty}/>
           <Switch>
             <Route path='/' exact component={Home}/>
