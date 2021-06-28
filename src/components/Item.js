@@ -52,6 +52,7 @@ const ItemWrapper = styled.div`
   min-height: calc(100vh - 6rem);
   height: 100%;
   margin-top: 6rem;
+  max-width: 600px;
 `;
 
 const InfoWrapper = styled.div`
@@ -68,14 +69,16 @@ const InfoWrapper = styled.div`
 `;
 
 const ImgWrapper = styled.img`
-  min-height: calc(100vh - 6rem);
-  height: 100%;
+  /* min-height: calc(100vh - 6rem);
+  height: 100%; */
+  max-width: 600px;
 `
 
 const CartWrapper = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 `;
 
 const BackBtn = styled.button`
@@ -99,6 +102,7 @@ const OrderBtn = styled.button`
   background-color: black;
   color: white;
   font-weight: bold;
+  text-decoration: none;
   &:hover {
     background-color: #333 ;
   }

@@ -11,7 +11,7 @@ const CartItem = ({item, deleteCartItem, changeQty}) => {
   return (
     <CartItemWrapper>
       <Image
-        src={`https://source.unsplash.com/${item.img}/300x500`}
+        src={`https://source.unsplash.com/${item.img}/300x350`}
         alt={item.id}
       />
       <InfoWrapper >
@@ -35,6 +35,14 @@ const CartItemWrapper = styled.div`
   align-items: flex-start;
 `;
 
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 8rem;
+`;
+
 const ItemLink = styled(Link)`
   color: black;
   text-decoration: none;
@@ -45,13 +53,7 @@ const ItemLink = styled(Link)`
 const Image = styled.img`
   /* width: 100%; */
   max-width: 400px;
-`;
-
-const InfoWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: flex-start;
+  height: auto;
 `;
 
 const BtnWrapper = styled.div`
