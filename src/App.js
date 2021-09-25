@@ -45,30 +45,30 @@ function App() {
 
   return (
     <AppWrapper > 
-          <Navbar  cartItemsQty={cartItemsQty}/>
-          <Switch>
-            <Route path='/' exact component={Home}/>
-            <Route path='/shop' exact><Shop foods={Food}/> </Route>
-            <Route 
-              exact
-              path="/shop/:id"
-              render={(routeProps) => (
-                <Item 
-                  item={findItem(routeProps.match.params.id)} 
-                  addCartItem={addCartItem}/>
-                )}
-            />
-            <Route 
-              path='/cart'>
-              
-              <Cart 
-                items={cartItems}
-                changeQty={changeQty}
-                deleteCartItem={deleteCartItem} 
-              />
-              </Route>
-          </Switch>
-      </AppWrapper>
+      <Navbar  cartItemsQty={cartItemsQty}/>
+      <Switch>
+        <Route path='/' exact component={Home}/>
+        <Route path='/shop' exact><Shop foods={Food}/> </Route>
+        <Route 
+          exact
+          path="/shop/:id"
+          render={(routeProps) => (
+            <Item 
+              item={findItem(routeProps.match.params.id)} 
+              addCartItem={addCartItem}/>
+            )}
+        />
+        <Route 
+          path='/cart'>
+          
+          <Cart 
+            items={cartItems}
+            changeQty={changeQty}
+            deleteCartItem={deleteCartItem} 
+          />
+          </Route>
+      </Switch>
+    </AppWrapper>
   );
 }
 
