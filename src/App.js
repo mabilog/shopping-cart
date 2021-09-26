@@ -47,11 +47,11 @@ function App() {
     <AppWrapper > 
       <Navbar  cartItemsQty={cartItemsQty}/>
       <Switch>
-        <Route path='/' exact component={Home}/>
-        <Route path='/shop' exact><Shop foods={Food}/> </Route>
+        <Route path='/shopping-cart/' exact component={Home}/>
+        <Route path='/shopping-cart/shop' exact><Shop foods={Food}/> </Route>
         <Route 
           exact
-          path="/shop/:id"
+          path="/shopping-cart/shop/:id"
           render={(routeProps) => (
             <Item 
               item={findItem(routeProps.match.params.id)} 
@@ -59,7 +59,7 @@ function App() {
             )}
         />
         <Route 
-          path='/cart'>
+          path='/shopping-cart/cart'>
           
           <Cart 
             items={cartItems}
