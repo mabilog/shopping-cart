@@ -33,7 +33,7 @@ const Item = ({item, addCartItem}) => {
           ) }
         
         {showCompleteOrder && (
-          <CartWrapper to='/cart'>
+          <CartWrapper to='/shopping-cart/cart'>
             <OrderBtn>Complete Order</OrderBtn>
           </CartWrapper>
         )}

@@ -15,7 +15,7 @@ const CartItem = ({item, deleteCartItem, changeQty}) => {
         alt={item.id}
       />
       <InfoWrapper >
-        <ItemLink to={`/shop/${item.id}`}> {item.name}</ItemLink>
+        <ItemLink to={`/shopping-cart/shop/${item.id}`}> {item.name}</ItemLink>
         <p>{item.price.toFixed(2)}</p>
         <BtnWrapper>
           <Btn onClick={handleDecrease} disable={item.qty > 2}>-</Btn>
