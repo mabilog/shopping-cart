@@ -7,9 +7,9 @@ import {  BiCart } from 'react-icons/bi';
 const Navbar = ({cartItemsQty}) => {
   return (
     <NavWrapper>
-      <Home to='/'>Shopping Co</Home>
-      <Shop to='/shop'>Shop</Shop>
-      <Cart to='/cart'>
+      <Home to='/shopping-cart/'>Shopping Co</Home>
+      <Shop to='/shopping-cart/shop'>Shop</Shop>
+      <Cart to='/shopping-cart/cart'>
         <BiCart/> 
         <span>{cartItemsQty}</span> 
       </Cart>
