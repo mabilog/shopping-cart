@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const Home = () => {
   return (
     <HomeWrapper>
-      <Catalogue to="/shop">Catalogue</Catalogue>
+      <Catalogue to="/shopping-cart/shop">Catalogue</Catalogue>
     </HomeWrapper>
   )
 }

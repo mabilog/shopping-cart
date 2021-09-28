@@ -73,9 +73,9 @@ function App() {
 }
 
 const AppWrapper = styled(Router)`
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `;
 
 export default App;

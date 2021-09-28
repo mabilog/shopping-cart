@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const ShopItems = ({ food }) => {
   return (
     <ItemWrapper>
-      <FoodLink to={`/shop/${food.id}`}>
+      <FoodLink to={`/shopping-cart/shop/${food.id}`}>
         <Image 
           src={`https://source.unsplash.com/${food.img}/640x640`}
           alt={food.id} 

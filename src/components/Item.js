@@ -49,10 +49,14 @@ const ItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   min-height: calc(100vh - 6rem);
   height: 100%;
   margin-top: 6rem;
-  max-width: 600px;
+  /* max-width: 600px; */
+  width: 100%;
+  margin: auto;
+  margin-top: 100px;
 `;
 
 const InfoWrapper = styled.div`
@@ -60,8 +64,8 @@ const InfoWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  min-height: calc(100vh - 6rem);
+  /* height: 100%; */
+  /* min-height: calc(100vh - 6rem); */
   width: 100%;
   a {
     width: 100%;
@@ -71,7 +75,7 @@ const InfoWrapper = styled.div`
 const ImgWrapper = styled.img`
   /* min-height: calc(100vh - 6rem);
   height: 100%; */
-  max-width: 600px;
+  /* max-width: 600px; */
 `
 
 const CartWrapper = styled(Link)`
